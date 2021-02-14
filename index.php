@@ -23,32 +23,32 @@
         <label >Nombres del interesado:</label>
         <div class="input-group margin-bottom-sm">
             <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="nombres" id="nombres" autocomplete="off" required onkeyup="funcnombres()"><br>
-            <div id="resultadonombres" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
+            <div id="resultadonombres" class="container"><i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado</div>
         </div><br><br>
         <label>Apellidos del interesado</label>
         <div class="input-group margin-bottom-sm">
             <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="apellidos" id="apellidos" autocomplete="off" required onkeyup="funcapellidos();"><br>
-            <div id="resultadoapellidos" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
+            <div id="resultadoapellidos" class="container"><i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado</div>
         </div><br><br>
         <label>Número de contacto del interesados</label>
         <div class="input-group margin-bottom-sm">
             <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="contacto" id="contacto" autocomplete="off" required onkeyup="funccontacto();"><br>
-            <div id="resultadocontacto" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
+            <div id="resultadocontacto" class="container"><i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado</div>
         </div><br><br>
         <label>Correo del interesado</label>
         <div class="input-group margin-bottom-sm">
             <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="correo" id="correo" autocomplete="off" required onkeyup="funccorreo();"><br>
-            <div id="resultadocorreo" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
+            <div id="resultadocorreo" class="container"><i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado</div>
         </div><br><br>
         <label>Ingresos promedios mensuales</label>
         <div class="input-group margin-bottom-sm">
             <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="ingreso" id="ingreso" autocomplete="off" required onkeyup="funcingreso();"><br>
-            <div id="resultadoingreso" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
+            <div id="resultadoingreso" class="container"><i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado</div>
         </div><br><br>
         <labe>Número de habitantes en la casa</label>
         <div class="input-group margin-bottom-sm">
             <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="familia" id="familia" autocomplete="off" required onkeyup="funcfamilia();"><br>
-            <div id="resultadofamilia" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
+            <div id="resultadofamilia" class="container"><i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado</div>
         </div><br><br>
     </form>
 </section>
@@ -64,7 +64,7 @@ function funcnombres() {
             $("#resultadonombres").html(mensaje);
          }); 
      } else { 
-        $("#resultadonombres").html('<i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado');
+        $("#resultadonombres").html('<i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado');
      };
 };
 function funcapellidos() {
@@ -75,7 +75,7 @@ function funcapellidos() {
             $("#resultadoapellidos").html(mensaje);
          }); 
      } else { 
-        $("#resultadoapellidos").html('<i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado');
+        $("#resultadoapellidos").html('<i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado');
      };
 };
 function funccontacto() {
@@ -86,7 +86,7 @@ function funccontacto() {
             $("#resultadocontacto").html(mensaje);
          }); 
      } else { 
-        $("#resultadocontacto").html('<i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado');
+        $("#resultadocontacto").html('<i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado');
      };
 };
 function funccorreo() {
@@ -97,7 +97,7 @@ function funccorreo() {
             $("#resultadocorreo").html(mensaje);
          }); 
      } else { 
-        $("#resultadocorreo").html('<i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado');
+        $("#resultadocorreo").html('<i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado');
      };
 };
 function funcingreso() {
@@ -108,7 +108,7 @@ function funcingreso() {
             $("#resultadoingreso").html(mensaje);
          }); 
      } else { 
-        $("#resultadoingreso").html('<i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado');
+        $("#resultadoingreso").html('<i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado');
      };
 };
 function funcfamilia() {
@@ -119,7 +119,7 @@ function funcfamilia() {
             $("#resultadofamilia").html(mensaje);
          }); 
      } else { 
-        $("#resultadofamilia").html('<i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado');
+        $("#resultadofamilia").html('<i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado');
      };
 };
 </script>
