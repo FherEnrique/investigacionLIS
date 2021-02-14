@@ -12,6 +12,9 @@
         #error{
             color: red;
         }
+        #good{
+            color: green;/*<i class="fas fa-check-circle"></i> */
+        }
     </style>
 </head>
 <body>
@@ -24,28 +27,28 @@
         </div><br><br>
         <label>Apellidos del interesado</label>
         <div class="input-group margin-bottom-sm">
-            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="busqueda" id="busqueda" autocomplete="off" required onkeyup="buscar();"><br>
-            <div id="resultadoBusqueda" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
+            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="apellidos" id="apellidos" autocomplete="off" required onkeyup="funcapellidos();"><br>
+            <div id="resultadoapellidos" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
         </div><br><br>
         <label>Número de contacto del interesados</label>
         <div class="input-group margin-bottom-sm">
-            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="busqueda" id="busqueda" autocomplete="off" required onkeyup="buscar();"><br>
-            <div id="resultadoBusqueda" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
+            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="contacto" id="contacto" autocomplete="off" required onkeyup="funccontacto();"><br>
+            <div id="resultadocontacto" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
         </div><br><br>
         <label>Correo del interesado</label>
         <div class="input-group margin-bottom-sm">
-            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="busqueda" id="busqueda" autocomplete="off" required onkeyup="buscar();"><br>
-            <div id="resultadoBusqueda" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
+            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="correo" id="correo" autocomplete="off" required onkeyup="funccorreo();"><br>
+            <div id="resultadocorreo" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
         </div><br><br>
         <label>Ingresos promedios mensuales</label>
         <div class="input-group margin-bottom-sm">
-            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="busqueda" id="busqueda" autocomplete="off" required onkeyup="buscar();"><br>
-            <div id="resultadoBusqueda" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
+            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="ingreso" id="ingreso" autocomplete="off" required onkeyup="funcingreso();"><br>
+            <div id="resultadoingreso" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
         </div><br><br>
         <labe>Número de habitantes en la casa</label>
         <div class="input-group margin-bottom-sm">
-            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="busqueda" id="busqueda" autocomplete="off" required onkeyup="buscar();"><br>
-            <div id="resultadoBusqueda" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
+            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="familia" id="familia" autocomplete="off" required onkeyup="funcfamilia();"><br>
+            <div id="resultadofamilia" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado</div>
         </div><br><br>
     </form>
 </section>
@@ -53,7 +56,6 @@
 
 
 <script>
-
 function funcnombres() {
     var textoBusqueda = $("input#nombres").val();
  
@@ -62,7 +64,62 @@ function funcnombres() {
             $("#resultadonombres").html(mensaje);
          }); 
      } else { 
-        $("#resultadonombres").html('Verificacion ha fallado');
+        $("#resultadonombres").html('<i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado');
+     };
+};
+function funcapellidos() {
+    var textoBusqueda = $("input#apellidos").val();
+ 
+     if (textoBusqueda != "") {
+        $.post("./php/func2.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+            $("#resultadoapellidos").html(mensaje);
+         }); 
+     } else { 
+        $("#resultadoapellidos").html('<i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado');
+     };
+};
+function funccontacto() {
+    var textoBusqueda = $("input#contacto").val();
+ 
+     if (textoBusqueda != "") {
+        $.post("./php/func3.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+            $("#resultadocontacto").html(mensaje);
+         }); 
+     } else { 
+        $("#resultadocontacto").html('<i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado');
+     };
+};
+function funccorreo() {
+    var textoBusqueda = $("input#correo").val();
+ 
+     if (textoBusqueda != "") {
+        $.post("./php/func4.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+            $("#resultadocorreo").html(mensaje);
+         }); 
+     } else { 
+        $("#resultadocorreo").html('<i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado');
+     };
+};
+function funcingreso() {
+    var textoBusqueda = $("input#ingreso").val();
+ 
+     if (textoBusqueda != "") {
+        $.post("./php/func5.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+            $("#resultadoingreso").html(mensaje);
+         }); 
+     } else { 
+        $("#resultadoingreso").html('<i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado');
+     };
+};
+function funcfamilia() {
+    var textoBusqueda = $("input#familia").val();
+ 
+     if (textoBusqueda != "") {
+        $.post("./php/func6.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
+            $("#resultadofamilia").html(mensaje);
+         }); 
+     } else { 
+        $("#resultadofamilia").html('<i class="fas fa-exclamation-circle" id="error"></i> Verificacion ha fallado');
      };
 };
 </script>
