@@ -1,4 +1,4 @@
-# InvestigacionLIS
+# Investigación - LIS
 
 ## Aplicación en PHP sobre expresiones regulares.
 
