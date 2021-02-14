@@ -1,12 +1,9 @@
 <?php
 $valor = $_POST['valorBusqueda'];
-echo '
-<table class="table table-striped">
-	<thead>
-	<tr>
-		<th><center>'.$valor.'</center></th>
-        <th><center>Foto</center></th>
-        <th><center>Empresa</center></th>
-        <th><center>Modificar</center></th>
-	</tr>';
+$pattern = "/^([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ']+[\s])+([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ'])+[\s]?([A-Za-zÁÉÍÓÚñáéíóúÑ]{0}?[A-Za-zÁÉÍÓÚñáéíóúÑ'])?$/";
+if (preg_match($pattern, $valor)) {
+	echo '<i class="fas fa-check-circle" id="good"></i> verificación exitosa';
+}else{
+	echo '<i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado';
+}
 ?>
