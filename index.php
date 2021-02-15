@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="./js/jquery.js"></script>
-    <title>Beca "N de Nayib"</title>
+    <title>Becas "N de Nayib"</title>
     <script src="https://kit.fontawesome.com/2944ad1077.js" crossorigin="anonymous"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
     <style>
         #error{
@@ -18,38 +24,47 @@
     </style>
 </head>
 <body>
+<header>
+    <nav>
+        <div class="nav-wrapper">
+        <a class="brand-logo master">Becas Nayib</a>
+        </div>
+    </nav>
+</header>
 <section class="lo">
+    <h2 class="master">Formulario de la Beca</h2>
     <form method="POST" role="form"><br>
-        <label >Nombres del interesado:</label>
-        <div class="input-group margin-bottom-sm">
-            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="nombres" id="nombres" autocomplete="off" required onkeyup="funcnombres()"><br>
-            <div id="resultadonombres" class="container"><i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado</div>
+        <div class="input-field">
+            <i class="fas fa-user-circle prefix"></i>
+            <input class="form-control" type="text" placeholder="Nombres y Apellidos del interesado (Ej. Carlos Argueta):" name="nombres" id="nombres" autocomplete="off" required onkeyup="funcnombres()"><br>
+            <div id="resultadonombres" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificación ha fallado</div>
         </div><br><br>
-        <label>Apellidos del interesado</label>
-        <div class="input-group margin-bottom-sm">
-            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="apellidos" id="apellidos" autocomplete="off" required onkeyup="funcapellidos();"><br>
-            <div id="resultadoapellidos" class="container"><i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado</div>
+        <div class="input-field">
+            <i class="fas fa-address-card prefix"></i>
+            <input class="form-control" type="text" placeholder="DUI del interesado (Ej. 00000000-0):" name="apellidos" id="apellidos" autocomplete="off" required onkeyup="funcapellidos();"><br>
+            <div id="resultadoapellidos" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificación ha fallado</div>
         </div><br><br>
-        <label>Número de contacto del interesados</label>
-        <div class="input-group margin-bottom-sm">
-            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="contacto" id="contacto" autocomplete="off" required onkeyup="funccontacto();"><br>
-            <div id="resultadocontacto" class="container"><i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado</div>
+        <div class="input-field">
+            <i class="fas fa-phone-alt prefix"></i>
+            <input class="form-control" type="text" placeholder="Número de contacto del interesados (Ej. 6796-7436):" name="contacto" id="contacto" autocomplete="off" required onkeyup="funccontacto();"><br>
+            <div id="resultadocontacto" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificación ha fallado</div>
         </div><br><br>
-        <label>Correo del interesado</label>
-        <div class="input-group margin-bottom-sm">
-            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="correo" id="correo" autocomplete="off" required onkeyup="funccorreo();"><br>
-            <div id="resultadocorreo" class="container"><i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado</div>
+        <div class="input-field">
+            <i class="fas fa-envelope prefix"></i>
+            <input class="form-control" type="text" placeholder="Correo electrónico del interesado (Ej. you@gmail.com):" name="correo" id="correo" autocomplete="off" required onkeyup="funccorreo();"><br>
+            <div id="resultadocorreo" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificación ha fallado</div>
         </div><br><br>
-        <label>Ingresos promedios mensuales</label>
-        <div class="input-group margin-bottom-sm">
-            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="ingreso" id="ingreso" autocomplete="off" required onkeyup="funcingreso();"><br>
-            <div id="resultadoingreso" class="container"><i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado</div>
+        <div class="input-field">
+            <i class="fas fa-money-check-alt prefix"></i>
+            <input class="form-control" type="text" placeholder="Ingresos promedios mensuales (Ej. 67.50):" name="ingreso" id="ingreso" autocomplete="off" required onkeyup="funcingreso();"><br>
+            <div id="resultadoingreso" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificación ha fallado</div>
         </div><br><br>
-        <labe>Número de habitantes en la casa</label>
-        <div class="input-group margin-bottom-sm">
-            <input class="form-control" type="text" placeholder="Ingrese parametros de busqueda" name="familia" id="familia" autocomplete="off" required onkeyup="funcfamilia();"><br>
-            <div id="resultadofamilia" class="container"><i class="fas fa-exclamation-circle" id="error"></i> verificación ha fallado</div>
+        <div class="input-field">
+            <i class="fas fa-users prefix"></i>
+            <input class="form-control" type="text" placeholder="Número de habitantes en la casa (Ej. 05):" name="familia" id="familia" autocomplete="off" required onkeyup="funcfamilia();"><br>
+            <div id="resultadofamilia" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificación ha fallado</div>
         </div><br><br>
+        <a class="waves-effect waves-light btn">Guardar</a>
     </form>
 </section>
 <br><br>
