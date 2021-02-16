@@ -120,7 +120,7 @@ function funccorreo() {
 };
 function funcingreso() {
     var textoBusqueda = $("input#ingreso").val();
- 
+
      if (textoBusqueda != "") {
         $.post("./php/func5.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
             $("#resultadoingreso").html(mensaje);
@@ -131,7 +131,7 @@ function funcingreso() {
 };
 function funcfamilia() {
     var textoBusqueda = $("input#familia").val();
- 
+
      if (textoBusqueda != "") {
         $.post("./php/func6.php", {valorBusqueda: textoBusqueda}, function(mensaje) {
             $("#resultadofamilia").html(mensaje);
