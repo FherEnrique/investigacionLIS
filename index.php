@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +16,7 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <style>
         #error{
             color: red;
@@ -41,12 +44,12 @@
         </div><br><br>
         <div class="input-field">
             <i class="fas fa-address-card prefix"></i>
-            <input class="form-control" type="text" placeholder="DUI del interesado (Ej. 00000000-0):" name="apellidos" id="apellidos" autocomplete="off" required onkeyup="funcapellidos();"><br>
+            <input class="form-control" type="text" placeholder="DUI del interesado (Ej. 00000000-0):" maxlength="10" name="apellidos" id="apellidos" autocomplete="off" required onkeyup="funcapellidos();"><br>
             <div id="resultadoapellidos" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificación ha fallado</div>
         </div><br><br>
         <div class="input-field">
             <i class="fas fa-phone-alt prefix"></i>
-            <input class="form-control" type="text" placeholder="Número de contacto del interesados (Ej. 6796-7436):" name="contacto" id="contacto" autocomplete="off" required onkeyup="funccontacto();"><br>
+            <input class="form-control" type="text" placeholder="Número de contacto del interesados (Ej. 6796-7436):" name="contacto" maxlength="9" id="contacto" autocomplete="off" required onkeyup="funccontacto();"><br>
             <div id="resultadocontacto" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificación ha fallado</div>
         </div><br><br>
         <div class="input-field">
@@ -61,10 +64,10 @@
         </div><br><br>
         <div class="input-field">
             <i class="fas fa-users prefix"></i>
-            <input class="form-control" type="text" placeholder="Número de habitantes en la casa (Ej. 05):" name="familia" id="familia" autocomplete="off" required onkeyup="funcfamilia();"><br>
+            <input class="form-control" type="text" placeholder="Número de habitantes en la casa (Ej. 05):" name="familia" id="familia" maxlength="2" autocomplete="off" required onkeyup="funcfamilia();"><br>
             <div id="resultadofamilia" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificación ha fallado</div>
         </div><br><br>
-        <a class="waves-effect waves-light btn">Guardar</a>
+        <input type="submit" class="waves-effect waves-light btn" name="boton" value="Guardar">
     </form>
 </section>
 <br><br>
@@ -138,5 +141,15 @@ function funcfamilia() {
      };
 };
 </script>
+<?php 
+    if (!empty($_POST["boton"])) {
+        if ($_SESSION["func1"] && $_SESSION["func2"] && $_SESSION["func3"] && $_SESSION["func4"] && $_SESSION["func5"] && $_SESSION["func6"]) {
+            echo "<script>Swal.fire('Datos guardados', 'Presione el boton para continuar', 'success')</script>";
+        }else{
+            echo "<script>Swal.fire('Error de regex', 'Presione el boton para intentarlo nuevamente', 'error')</script>";
+        }
+        unset($_SESSION["func1"], $_SESSION["func2"],$_SESSION["func3"],$_SESSION["func4"], $_SESSION["func5"], $_SESSION["func6"], $_POST["boton"]);
+    }
+?>
 </body>
 </html>
