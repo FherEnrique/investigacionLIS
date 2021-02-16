@@ -1,7 +1,7 @@
 <?php
 session_start();
 $valor = $_POST['valorBusqueda'];
-$pattern = "/[A-Za-z]+@[a-z]+\.[a-z]+/";
+$pattern = "/[A-Za-z1-9]+@[a-z1-9]+\.[a-z]+/";
 if (preg_match($pattern, $valor)) {
 	echo '<i class="fas fa-check-circle" id="good"></i> verificación exitosa';
 	$_SESSION["func4"] = true;
