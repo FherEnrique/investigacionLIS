@@ -64,7 +64,7 @@
         </div><br><br>
         <div class="input-field">
             <i class="fas fa-users prefix"></i>
-            <input class="form-control" type="text" placeholder="Número de habitantes en la casa (Ej. 05):" name="familia" id="familia" maxlength="2" autocomplete="off" required onkeyup="funcfamilia();"><br>
+            <input class="form-control" type="text" placeholder="Número de habitantes en la casa (Ej. 5):" name="familia" id="familia" maxlength="2" autocomplete="off" required onkeyup="funcfamilia();"><br>
             <div id="resultadofamilia" class="container"><i class="fas fa-exclamation-circle" id="error"></i> Verificación ha fallado</div>
         </div><br><br>
         <input type="submit" class="waves-effect waves-light btn" name="boton" value="Guardar">
